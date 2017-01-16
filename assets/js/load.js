@@ -8,7 +8,7 @@ function cargarCiudades() {
                 //Información
                 $('#ciudadesInfo').append('<div>' + datos[row].ciudad + '</div><div>' + datos[row].fecha + '</div>')
                     //Select en form
-                $('#ciudad').append($("<option>", { value: datos[row].idCiudad, text: datos[row].ciudad }));
+                $('#strciudad').append($("<option>", { value: datos[row].idCiudad, text: datos[row].ciudad }));
             }
         }
     });

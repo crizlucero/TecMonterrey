@@ -1,4 +1,10 @@
 <?php
+/**
+    @author Christian Lucero
+    @date 2017/01/09
+
+    Clase para mantener los datos de las ciudades guardadas
+*/
 class Ciudades{
     public $idCiudad;
     public $ciudad;

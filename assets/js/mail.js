@@ -6,7 +6,7 @@ $(function() {
             data: {
                 nombre: $("#strname").val(),
                 email: $("#stremail").val(),
-                ciudad: 1 //$("#strciudad option:selected").val(),
+                ciudad: $("#strciudad option:selected").val(),
             },
             success: function() {
                 alert("Contacto enviado");

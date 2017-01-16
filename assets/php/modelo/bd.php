@@ -1,4 +1,10 @@
 <?php
+/**
+    @author Christian Lucero
+    @date 2017/01/09
+
+    Clase de control de la base de datos
+*/
 include_once(dirname(__FILE__) . "/ciudades.php");
 include_once(dirname(__FILE__) . "/personas.php");
 class BD{
@@ -8,14 +14,14 @@ class BD{
     private $dbname = "tecnologico";
     private $conn = null;
     function __construct(){
-        //Create connection
+        //Crea la conexión
         $this->conn = new mysqli($this->host, $this->user, $this->pwd, $this->dbname);
-        // Check connection
+        // Checa la conexión
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         } 
     } 
-
+    //Obtiene las ciudades almacenadas en la base de datos
     function getCiudades(){
         $query = "select * from Ciudad";
         $result = $this->conn->query($query);
@@ -31,7 +37,8 @@ class BD{
         }
         return json_encode($ciudades);
     }  
-
+//Agrega las personas interesadas en la base de datos
+//Se podría dar la opcion de tipo de contacto, sea vía telefónica o por correo electrónico.
     function addPersonas($persona){
         $sql = "INSERT INTO Persona (Nombre, Email, idCiudad) VALUES ('$persona->Nombre', '$persona->Email', '$persona->idCiudad')";
 
